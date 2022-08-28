@@ -1,0 +1,178 @@
+:root{
+  --Linear-gradient: hsl(249, 99%, 64%) to hsl(278, 94%, 30%); /*(active input border)*/
+  --Red: hsl(0, 100%, 66%); /*(input errors)*/
+  --White: hsl(0, 0%, 100%);
+  --Light-grayish-violet: hsl(270, 3%, 87%);
+  --Dark-grayish-violet: hsl(279, 6%, 55%);
+  --Very-dark-violet: hsl(278, 68%, 11%);
+
+  --google-font: 'Space Grotesk', sans-serif;
+
+}
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+}
+
+.bg-picture{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: auto;
+  z-index: -1;
+}
+
+.credit-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap: 6rem;
+}
+
+.card-image{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card-image span{
+  position: relative;
+  color: aliceblue;
+  font-family: var(--google-font);
+}
+
+.card-front{
+  position: relative;
+  right: 6rem;
+}
+
+.card-logo{
+  position: absolute;
+  top: 14%;
+  left: -14%;
+}
+
+.span-for-detail{
+  position: absolute;
+  top: 0;
+  left: 0;
+  letter-spacing: 2px;
+}
+
+.card-number-detail{
+  font-size: 2rem;
+  left: -14%;
+  top: 55%;
+}
+
+.name-detail{
+  font-size: 1rem;
+  top: 80%;
+  left: -14%;
+}
+
+.expiry-detail{
+  font-size: 1rem;
+  top: 80%;
+  left: 55%;
+}
+
+.cvc-detail{
+  font-size: 1.3rem;
+  top: 42%;
+  left: 73%;
+}
+
+form{
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+form *{
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: var(--google-font);
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+}
+
+form input{
+  height: 2rem;
+  padding: 1.2rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--Light-grayish-violet);
+  outline: none;
+}
+
+form input:focus{
+  border: 2px solid var(--Dark-grayish-violet);
+  outline: none;
+}
+
+form input::placeholder{
+  text-transform: none;
+  color: var(--Dark-grayish-violet);
+  font-size: 1.2rem;
+}
+
+#card-holder-name, #card-numer {
+  width: 22rem;
+}
+
+.expiry-cvc{
+  display: flex;
+  gap: 2rem;
+}
+
+.expiry input{
+  display: inline;
+  width: 5.4rem;
+}
+
+#cvc{
+  width: 8.8rem;
+}
+
+.submit{
+  display: inline-block;
+  width: 100%;
+}
+
+.submit button{
+  width: 100%;
+  background: var(--Very-dark-violet);
+  text-transform: none;
+  color: var(--Light-grayish-violet);
+  cursor: pointer;
+  padding: 1rem;
+  border: 0;
+  border-radius: 0.5rem;
+  font-size: 1.3rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

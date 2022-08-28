@@ -1,0 +1,16 @@
+
+@media screen and (max-width: 376px) {
+
+  .bg-picture{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: auto;
+    z-index: -1;
+  }
+  
+  .credit-card{
+    flex-direction: column;
+  }
+}
