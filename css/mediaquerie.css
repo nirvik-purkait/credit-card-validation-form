@@ -1,16 +1,75 @@
 
 @media screen and (max-width: 376px) {
 
-  .bg-picture{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
+  .bg-picture {
+    width: 100%;
     height: auto;
-    z-index: -1;
+  }
+
+  .credit-card {
+    flex-direction: column;
+    gap: 0;
+    justify-content: unset;
+    margin:  2rem 0;
   }
   
-  .credit-card{
-    flex-direction: column;
+  .card-image {
+    width: 100%;
+    gap: 0;
   }
+
+  .card-image span:nth-child(1){
+    z-index: 1;
+  }
+
+  .card-front, 
+  .card-back{
+    width: 74%;
+  }
+
+  .card-front {
+    position: relative;
+    left: 1rem;
+    top: 5.6rem;
+  }
+
+  .card-logo {
+    position: absolute;
+    top: 68%;
+    left: 7%;
+    width: 3rem;
+  }
+
+  .card-number-detail {
+    font-size: 1.2rem;
+    left: 7%;
+    top: 106%;
+  }
+
+  .name-detail {
+    font-size: 0.6rem;
+    top: 135%;
+    left: 7%;
+  }
+
+  .expiry-detail {
+    font-size: 0.6rem;
+    top: 135%;
+    left: 60%;
+  }
+
+  .card-back {
+    position: relative;
+    left: 5rem;
+    bottom: 9.6rem;
+  }
+
+  .cvc-detail {
+    font-size: 0.6rem;
+    top: -5.3rem;
+    left: 18.2rem;
+  }
+
+
+
 }
