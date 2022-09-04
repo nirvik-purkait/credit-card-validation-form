@@ -4,20 +4,22 @@ let cardExpMonth = document.getElementById('exp-month')
 let cardExpYear = document.getElementById('exp-year')
 let cardCVC = document.getElementById('cvc')
 
-let errorMessage = document.querySelectorAll('.error-message')
+let dataErrorMessage = document.querySelectorAll('[data-error-message]');
+
+
 
 
 
 cardName.addEventListener('focusout', () => {
   let isOnlySpace = cardName.value.trim().length
-
+  
   if (cardName.value == '' || cardName == null || isOnlySpace == 0) {
-    errorMessage[0].innerHTML = 'Please fill out this field'
+    dataErrorMessage[0].dataset.errorMessage = 'Please fill out this field'
     cardName.classList.add('error')
     cardName.classList.remove('success')
   }
   else {
-    errorMessage[0].innerHTML = ''
+    dataErrorMessage[0].dataset.errorMessage = ''
     cardName.classList.add('success')
     cardName.classList.remove('error')
   } 
@@ -30,13 +32,18 @@ cardNumber.addEventListener('focusout', () => {
 
   let cardNumberLength = theCardNumber.toString().length
 
-  if (theCardNumber == '' || isNaN(theCardNumber) || cardNumberLength != 16) {
-    errorMessage[1].innerHTML = 'Wrong format, numbers only'
+  if (theCardNumber == '' || isNaN(theCardNumber)) {
+    dataErrorMessage[1].dataset.errorMessage = 'Wrong format, numbers only'
+    cardNumber.classList.add('error')
+    cardNumber.classList.remove('success')
+  }
+  else if (cardNumberLength != 16) {
+    dataErrorMessage[1].dataset.errorMessage = 'Please provide 16 digit number'
     cardNumber.classList.add('error')
     cardNumber.classList.remove('success')
   }
   else {
-    errorMessage[1].innerHTML = ''
+    dataErrorMessage[1].dataset.errorMessage = ''
     cardNumber.classList.add('success')
     cardNumber.classList.remove('error')
   }
@@ -50,12 +57,12 @@ cardExpMonth.addEventListener('focusout', () => {
   let cardExpMonthLength = theCardExpMonth.toString().length
 
   if (theCardExpMonth == '' || isNaN(theCardExpMonth) || cardExpMonthLength != 2) {
-    errorMessage[2].innerHTML = 'Please provide valid month and year'
+    dataErrorMessage[2].dataset.errorMessage = 'Please provide valid month and year'
     cardExpMonth.classList.add('error')
     cardExpMonth.classList.remove('success')
   }
   else {
-    errorMessage[2].innerHTML = ''
+    dataErrorMessage[2].dataset.errorMessage = ''
     cardExpMonth.classList.add('success')
     cardExpMonth.classList.remove('error')
   }
@@ -69,12 +76,12 @@ cardExpYear.addEventListener('focusout', () => {
   let cardExpYearLength = theCardExpYear.toString().length
 
   if (theCardExpYear == '' || isNaN(theCardExpYear) || cardExpYearLength != 4) {
-    errorMessage[2].innerHTML = 'Please provide valid month and year'
+    dataErrorMessage[2].dataset.errorMessage = 'Please provide valid month and year'
     cardExpYear.classList.add('error')
     cardExpYear.classList.remove('success')
   }
   else {
-    errorMessage[2].innerHTML = ''
+    dataErrorMessage[2].dataset.errorMessage = ''
     cardExpYear.classList.add('success')
     cardExpYear.classList.remove('error')
   }
@@ -87,47 +94,14 @@ cardCVC.addEventListener('focusout', () => {
   let cardCVCLength = theCardCVC.toString().length
 
   if (theCardCVC == '' || isNaN(theCardCVC) || cardCVCLength != 3) {
-    errorMessage[3].innerHTML = 'Please provide a 3 digit number'
+    dataErrorMessage[3].dataset.errorMessage = 'Please provide a 3 digit number'
     cardCVC.classList.add('error')
     cardCVC.classList.remove('success')
   }
   else {
-    errorMessage[3].innerHTML = ''
+    dataErrorMessage[3].dataset.errorMessage = ''
     cardCVC.classList.add('success')
     cardCVC.classList.remove('error')
   }
 
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// console.log(cardName);
-// console.log(cardNumber);
-// console.log(cardExpMonth);
-// console.log(cardExpYear);
-// console.log(cardCVC);
